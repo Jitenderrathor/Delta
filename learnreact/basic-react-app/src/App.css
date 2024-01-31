@@ -1,0 +1,32 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.product-box{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 20px;
+}
+.product-box .price{
+  background-color: yellow;
+  color: #000;
+  margin-top: 10px;
+  text-align: center;
+
+}
+.product-box .product{
+  /* flex: 1 1 300px; */
+  padding:  20px ;
+  text-align: start;
+border: 1px solid #767676;
+
+}
+.product-box .product h3{
+  margin-top: 0;
+  padding: 0 20px;
+  text-align: center;
+}

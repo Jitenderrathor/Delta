@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+    ">
+</head>
+<body>
+    <div class="container-xxl mt-5">
+      <h3>Edit Post</h3>
+        <div class="row">
+          <div class="col-12">
+            <h4> Post id : <%= post.id %></h4>
+            <h4> Post username :<%= post.username %></h4>
+          </div>
+            <div class="col-12">
+                <form method="post" action="/posts/<%= post.id %>?_method=PATCH" class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label">Content</label>
+                      <textarea name="content" class="form-control"><%= post.content %></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">
+                        Submit 
+                      </button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

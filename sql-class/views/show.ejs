@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 class="text-center pt-5">All Users Data</h1>
+    <div class="container-xxl my-3">
+        <div class="row">
+            <% for (user of result) { %>
+            <div class="col-4 ps-3 pt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><%= user.usernme %></h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Id :</b> <%= user.id %></li>
+                            <li class="list-group-item"><b>Gmail :</b> <%= user.email %></li>
+                        </ul>
+                        <div class="d-flex justify-content-center gap-2 mt-2 ">
+                            <div class="">
+                                <form method="get" action="/user/<%=user.id%>/edit" >
+                                    <div class="mb-3">
+                                        <button type="submit" class="form-control">Edit</button>
+                                    </div>
+                                </form>
+                                <form method="post" action="/user/<%=user.id%>?_method=DELETE" >
+                                    <div class="mb-3">
+                                        <button type="submit" class="form-control">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- <a href="http://localhost:8080/user/<%= user.id %>/delete" class="btn btn-danger ms-3">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
